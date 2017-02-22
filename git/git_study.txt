@@ -1,0 +1,56 @@
+#git
+
+#initialize a new Git project
+git init
+
+'''
+A Git project can be thought of as having three parts:
+①A Working Directory: where you'll be doing all the work: creating, editing, deleting and organizing files
+②A Staging Area: where you'll list changes you make to the working directory
+③A Repository: where Git permanently stores those changes as different versions of the project
+　①→→→→→②→→→→→③
+'''
+
+#check the status of those changes
+git status
+
+#untracked files:that Git sees the file but has not started tracking changes yet.
+
+#added to the staging area.In order for Git to start tracking scene-1.txt
+git add filename
+git add fileA fileB
+
+#check the difference between the working directory and the staging area
+git diff filename
+
+#git commit.
+git commit -m "message"
+e.x:
+git commit -m "version 1.0"                                                             
+[master (root-commit) 2e795f5] version 1.0                                                
+ 1 file changed, 2 insertions(+)                                                          
+ create mode 100644 scene-1.txt 
+
+#Commits are stored chronologically in the repository and can be viewed with
+git log
+
+#to see the most recently commit
+git show HEAD
+
+
+#restore the file in your working directory to look exactly as it did when you last made a commit.
+git checkout HEAD filename
+
+#unstage that file from the staging area 
+git reset HEAD filename
+
+#reset to a previous commit, using the first 7 characters of one of the past commit SHAs in your Git log.
+git log #
+git reset SHA #e.x:git reset 5d69206
+git log
+git show HEAD
+
+
+#github
+https://git-scm.com/book/ja/
+git clone git://github.com/schacon/grit.git mygrit
